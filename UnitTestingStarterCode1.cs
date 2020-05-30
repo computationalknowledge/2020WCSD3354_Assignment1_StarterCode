@@ -6,9 +6,12 @@ namespace ConsoleApp28
     {
         static void Main(string[] args)
         {
-            Calculator c = new Calculator(5,6);
-            Console.WriteLine("{0}", c.answer);
-            
+            Calculator c = new Calculator();
+            Console.WriteLine("{0}", c.Add(6, 7));
+            Console.WriteLine("{0}", c.Substract(6, 7));
+            Console.WriteLine("{0}", c.Multiply(6, 7));
+            Console.WriteLine("{0}", c.Devide(6, 7));
+            Console.WriteLine("{0}", c.Exponentiate(6, 7));
         }
     }
 
@@ -18,7 +21,8 @@ namespace ConsoleApp28
         // stuff the answer into that class variable
         // and access that variable up in our Program class
 
-        public double answer;
+        // lets make a zero argument constructor!
+        public Calculator() { }
         public Calculator(int input1, int input2)
         {
             Console.Write("I am in he Constructor!");
@@ -30,11 +34,13 @@ namespace ConsoleApp28
         // return type: double
         // name: Add
         // method parameters
-        public void Add(float a, float b)
+        public float Add(float a, float b)
         {
-            answer = a + b;
-            Console.WriteLine("*** debug msg: Add method output is {0}", answer);
-            
+            return (a + b);
+        }
+        public float Substract(float a, float b)
+        {
+            return (a - b);
         }
 
 
